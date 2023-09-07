@@ -7,32 +7,28 @@ app = Flask(__name__)
 
 @app.route("/api", methods=['GET'])
 def home():
-    
+
     slack_name = request.args.get('slack_name')
-    track_name = request.args.get('track_name')
+    track_name = request.args.get('track')
     day = datetime.now(pytz.utc).strftime('%A')
     time = datetime.now(pytz.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
-    git_file = 'sscvncvs'
-    git_repo = 'ksscvncvs'
-    
+    git_file = 'https://github.com/Alonge9500/HNGINTERN/blob/main/stageone.py'
+    git_repo = 'https://github.com/Alonge9500/HNGINTERN'
+
     response = {
         "slack_name":slack_name,
-        "Current_day":day,
+        "current_day":day,
         "utc_time":time,
         "track":track_name,
         "github_file_url":git_file,
         "github_repo_url":git_repo,
         "status_code":200
-        
+
     }
-    
+
     return jsonify(response)
-    
-    
-    
-    
-    
-if __name__ == "__main__":
-    app.run(host='0.0.0.0',port=5000)
-    
-    
+
+
+
+
+
