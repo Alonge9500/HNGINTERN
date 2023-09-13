@@ -1,0 +1,1 @@
+This documentation provides information about the RESTful API endpoints provided by the Flask application. The API allows you to perform CRUD (Create, Read, Update, Delete) operations on Person records in a SQLite database.
